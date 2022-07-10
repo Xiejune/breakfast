@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- 清除預設 ------------------------------------------------------------------------------------------- -->
+  <link rel="stylesheet" href="../css/normalize.css">
+  <!-- font awesome => icon 使用 ------------------------------------------------------------------------- -->
+  <link rel="stylesheet" href="../css/all.css">
+  <!-- css 樣式 ------------------------------------------------------------------------------------------ -->
+  <link rel="stylesheet" href="../css/style.css">
+  <!-- 1.設定 swiper css -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+  <!-- 1. AOS 的 css -->
+  <link rel="stylesheet" href="../css/aos.css">
+  <!-- 轉場特效 animate.css ------------------------------------------------------------------------------- -->
+  <link rel="stylesheet" href="../css/animate.css">
+  <title>聯絡我們</title>
+</head>
+<body>
+  <!-- 導覽列 -------------------------------------------------------------------------------------------- -->
+  <div id="navbar">
+    <div class="container">
+      <!-- logo -->
+      <a id="logo" href="../index.html"><img src="../images/logo.svg"></a>
+      <ul id="menu">
+        <li><a href="../關於我們/story.html"><i class="fa-solid fa-user"></i>關於我們</a></li>
+        <li><a href="../最新消息/news_both.html"><i class="fa-solid fa-volume-high"></i>最新消息</a></li>
+        <li><a href="../美味餐點/combination.html"><i class="fa-solid fa-rectangle-list"></i>美味餐點</a></li>
+        <li><a href="./conect.html"><i class="fa-solid fa-phone"></i>聯絡我們</a></li>
+      </ul>
+      <!-- 漢堡按鈕 -->
+      <button type="button" class="btn" id="btn-hamburger"><i class="fa-solid fa-list-ul animate__animated"></i></button>
+    </div>
+  </div>
+
+  <!-- 介紹: 使用 background-attachment: fixed; -->
+  <div id="conect1" class="background">
+    <div class="container">
+      <div class="content-text">
+        <i class="fa-solid fa-phone animate__animated animate__swing animate__infinite"></i>
+        <h1>聯絡我們</h1>
+        <p><a href="../index.html">首頁</a>&nbsp;&gt;&nbsp;聯絡我們</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="conect_main">
+    <div class="container">
+      <p data-aos="fade-down" data-aos-duration="1500" data-aos-once="false" data-aos-offset="0">敬愛的消費者您好：非常感謝您的回饋，我們將於上班時間盡快回覆，謝謝您。</p>
+      <p data-aos="fade-down" data-aos-duration="1500" data-aos-once="false" data-aos-offset="0">合作提案敬請同步提供 「 公司網址 」 或 「 檔案下載連結 」 給我們，謝謝您</p>
+      <form class="row" data-aos="fade-down" data-aos-duration="1500" data-aos-once="false" data-aos-offset="0">
+        <div class="col">
+          <p>姓名</p>
+          <input type="text" placeholder="姓名">
+        </div>
+        <div class="col">
+          <p>聯絡電話</p>
+          <input type="tel" placeholder="聯絡電話">
+        </div>
+        <div class="col">
+          <p>地址</p>
+          <input type="text" placeholder="地址">
+        </div>
+        <div class="col">
+          <p>郵件信箱</p>
+          <input type="text" placeholder="郵件信箱">
+        </div>
+        <div id="special" class="col">
+          <p>訊息</p>
+          <textarea cols="30" rows="10" placeholder="訊息"></textarea>
+        </div>
+        <div id="special_button" class="col">
+          <div class="button">
+            <span class="animate__animated animate__slideOutLeft"></span>
+            <input id="btn-conect" type="submit" value="送出">
+            <span class="animate__animated animate__slideOutRight"></span>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div id="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h3>關於我們</h3>
+          <p>萊初早餐店</p>
+        </div>
+        <div class="col">
+          <h3>聯絡資訊</h3>
+          <div class="row">
+            <div class="col">
+              <i class="fa-solid fa-location-dot"></i>
+              <p>新北市新莊區</p>
+            </div>
+            <div class="col">
+              <i class="fa-solid fa-phone"></i>
+              <p>123456789</p>
+            </div>
+            <div class="col">
+              <i class="fa-solid fa-envelope"></i>
+              <p>abc@defg.com</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#"><i class="fa-brands fa-google-plus-g"></i></a>
+          <a href="#"><i class="fa-solid fa-info"></i></a>
+          <a href="#"><i class="fa-solid fa-dove"></i></a>
+        </div>
+        <div class="col">
+          <p>
+            謝宜君 &copy; 2022 切版練習<br>
+            此網站為切版練習，所有圖片的著作權為原網站所有
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- 2.設定 swiper js -->
+  <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+  <!-- 2. AOS 的主程式 js -->
+  <script src="../js/aos.js"></script>
+
+  <script>
+    // 3. 啟動 AOS
+    AOS.init()
+  </script>
+
+  <script>
+    // 點擊漢堡清單
+    const btn_hamburger = document.querySelector('#btn-hamburger')
+    // 清單
+    const menu = document.querySelector('#menu')
+    btn_hamburger.onclick = () => {
+      if (btn_hamburger.firstElementChild.className.includes('fa-list-ul')) {
+        // 展開清單
+        menu.classList.add('expand')
+        // 轉換 icon (關閉)
+        btn_hamburger.firstElementChild.classList.replace('fa-list-ul', 'fa-xmark')
+        // 增加轉場特效
+        if (btn_hamburger.firstElementChild.className.includes('animate__rotateOut_new')) {
+          btn_hamburger.firstElementChild.classList.replace('animate__rotateOut_new', 'animate__rotateIn')
+        } else {
+          btn_hamburger.firstElementChild.classList.add('animate__rotateIn')
+        }
+      } else {
+        // 關閉清單
+        menu.classList.remove('expand')
+        // 轉換 icon (清單)
+        btn_hamburger.firstElementChild.classList.replace('fa-xmark', 'fa-list-ul')
+        // 增加轉場特效
+        btn_hamburger.firstElementChild.classList.replace('animate__rotateIn', 'animate__rotateOut_new')
+      }
+    }
+
+    // 8.只要導覽列在最頂端才會變顏色(透明度)
+    const navbar = document.querySelector('#navbar')
+    document.onscroll = () => {
+      // console.log(window.scrollY)
+      // 螢幕尺寸大於 1200 才會作用
+      if (window.innerWidth >= 1200) {
+        // 卷軸不在最頂端
+        if (window.scrollY !== 0) {
+          navbar.classList.add('change-bg')
+        } else {
+          navbar.classList.remove('change-bg')
+        }
+      } else {
+        navbar.classList.remove('change-bg')
+      }
+    }
+
+    // 抓取 "聯絡我們" 的按鈕
+    const btn_concet = document.querySelector('#btn-conect')
+    // 抓取按鈕的線
+    const span_conect = document.querySelectorAll('#conect_main .col .button span')
+    // 滑鼠移入按鈕
+    btn_concet.onmouseenter = () => {
+      span_conect[0].classList.replace('animate__slideOutLeft', 'animate__slideInLeft')
+      span_conect[1].classList.replace('animate__slideOutRight', 'animate__slideInRight')
+    }
+
+    // 滑鼠移開按鈕
+    btn_concet.onmouseleave = () => {
+      span_conect[0].classList.replace('animate__slideInLeft', 'animate__slideOutLeft')
+      span_conect[1].classList.replace('animate__slideInRight', 'animate__slideOutRight')
+    }
+  </script>
+
+  <script>
+    // 紀錄前後是否一致
+    let record = []
+    // 計算按了幾次
+    let time = 0
+    const input = document.querySelectorAll('#conect_main .row .col:not(#special_button)')
+    for (const i in input) {
+      input[i].onclick = (event) => {
+        // 停止事件冒泡
+        event.stopPropagation()
+        record.push(i)
+        time++
+        // 前後是否一致
+        if (record[time-1] !== record[time-2]) {
+          for (const l of input) {
+            l.classList.remove('show')
+            // 將佔位符恢復
+            l.lastElementChild.placeholder = l.firstElementChild.innerText
+            if (l.lastElementChild.value !== '') {
+              l.classList.add('showp')
+            } else {
+              l.classList.remove('showp')
+            }
+          }
+        }
+        // 如果點擊時, record 已有 2 個數字, 則減掉第一個和 time 減掉 1 次
+        if (record.length === 2) {
+          // 減掉第一個
+          record.shift()
+          time--
+        }
+        
+        // 如果點擊時, 這個元素沒有 .show, 則可以加上 .show
+        if (input[i].className.includes('')) {
+          input[i].classList.add('show')
+          input[i].lastElementChild.placeholder = ""
+        }
+      }
+    }
+
+    // 點擊螢幕恢復, 移除 .show
+    document.onclick = () => {
+      for (const l of input) {
+        l.classList.remove('show')
+        // 將佔位符恢復
+        l.lastElementChild.placeholder = l.firstElementChild.innerText
+        if (l.lastElementChild.value !== '') {
+          l.classList.add('showp')
+        } else {
+          l.classList.remove('showp')
+        }
+      }
+    }
+  </script>
+</body>
+</html>

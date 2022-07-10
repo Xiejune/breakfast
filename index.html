@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- 清除預設 ------------------------------------------------------------------------------------------- -->
+  <link rel="stylesheet" href="./css/normalize.css">
+  <!-- font awesome => icon 使用 ------------------------------------------------------------------------- -->
+  <link rel="stylesheet" href="./css/all.css">
+  <!-- css 樣式 ------------------------------------------------------------------------------------------ -->
+  <link rel="stylesheet" href="./css/style.css">
+  <!-- 1.設定 swiper css -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+  <!-- 1. AOS 的 css -->
+  <link rel="stylesheet" href="./css/aos.css">
+  <!-- 轉場特效 animate.css ------------------------------------------------------------------------------- -->
+  <link rel="stylesheet" href="./css/animate.css">
+  <title>萊初早餐店</title>
+</head>
+<body>
+  <!-- 導覽列 -------------------------------------------------------------------------------------------- -->
+  <div id="navbar">
+    <div class="container">
+      <!-- logo -->
+      <a id="logo" href="./index.html"><img src="./images/logo.svg"></a>
+      <ul id="menu">
+        <li><a href="./關於我們/story.html"><i class="fa-solid fa-user"></i>關於我們</a></li>
+        <li><a href="./最新消息/news_both.html"><i class="fa-solid fa-volume-high"></i>最新消息</a></li>
+        <li><a href="./美味餐點/combination.html"><i class="fa-solid fa-rectangle-list"></i>美味據點</a></li>
+        <li><a href="./聯絡我們/conect.html"><i class="fa-solid fa-phone"></i>聯絡我們</a></li>
+      </ul>
+      <!-- 漢堡按鈕 -->
+      <button type="button" class="btn" id="btn-hamburger"><i class="fa-solid fa-list-ul animate__animated"></i></button>
+    </div>
+  </div>
+
+  <!-- 主題: 輪播圖1 -->
+  <div id="swiper1">
+    <div class="container">
+      <!-- (設定 swiper 結構) -->
+      <div id="one" class="swiper">
+        <!-- 輪播圖片的主體 -->
+        <div class="swiper-wrapper">
+          <!-- Slides items -->
+          <div class="swiper-slide">
+            <div class="content">
+              <img src="https://cdn.pixabay.com/photo/2017/09/18/16/53/burger-2762371_960_720.jpg">
+              <div class="content-text">
+                <p data-swiper-parallax-y="100%" data-swiper-parallax-duration="2000">ENJOY A</p>
+                <p data-swiper-parallax-y="-100%" data-swiper-parallax-duration="2300">WONDERFUL <i class="fa-solid fa-burger"></i> DAY</p>
+              </div>
+              <!-- 下方指示標 -->
+              <div class="container-radius">
+                <div class="content-bottom">
+                  <svg x="0px" y="0px" width="110px" height="40px">
+                    <path fill="#FFFFFF" d="M110,40H0V0h110V40z M12.875,11C21.435,22.816,31.842,40,55,40c23.211,0,33.331-17.178,41.875-29C101.537,4.55,110,0,110,0H0C0,0,8.174,4.51,12.875,11z"/>
+                  </svg>
+                  <a href="#about"><i class="fa-solid fa-angle-down"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="content">
+              <img src="https://cdn.pixabay.com/photo/2020/09/26/23/47/sandwich-5605285_960_720.jpg">
+              <div class="content-text">
+                <p data-swiper-parallax-y="100%" data-swiper-parallax-duration="2000">ENJOY A</p>
+                <p data-swiper-parallax-y="-100%" data-swiper-parallax-duration="2300">WONDERFUL <i class="fa-solid fa-burger"></i> DAY</p>
+              </div>
+              <!-- 下方指示標 -->
+              <div class="container-radius">
+                <div class="content-bottom">
+                  <svg x="0px" y="0px" width="110px" height="40px">
+                    <path fill="#FFFFFF" d="M110,40H0V0h110V40z M12.875,11C21.435,22.816,31.842,40,55,40c23.211,0,33.331-17.178,41.875-29C101.537,4.55,110,0,110,0H0C0,0,8.174,4.51,12.875,11z"/>
+                  </svg>
+                  <a href="#about"><i class="fa-solid fa-angle-down"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="content">
+              <img src="https://cdn.pixabay.com/photo/2020/02/24/07/39/brunch-4875447_960_720.jpg">
+              <div class="content-text">
+                <p data-swiper-parallax-y="100%" data-swiper-parallax-duration="2000">ENJOY A</p>
+                <p data-swiper-parallax-y="-100%" data-swiper-parallax-duration="2300">WONDERFUL <i class="fa-solid fa-burger"></i> DAY</p>
+              </div>
+              <!-- 下方指示標 -->
+              <div class="container-radius">
+                <div class="content-bottom">
+                  <svg x="0px" y="0px" width="110px" height="40px">
+                    <path fill="#FFFFFF" d="M110,40H0V0h110V40z M12.875,11C21.435,22.816,31.842,40,55,40c23.211,0,33.331-17.178,41.875-29C101.537,4.55,110,0,110,0H0C0,0,8.174,4.51,12.875,11z"/>
+                  </svg>
+                  <a href="#about"><i class="fa-solid fa-angle-down"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="content">
+              <img src="https://cdn.pixabay.com/photo/2015/10/19/06/13/french-toast-995532_960_720.jpg">
+              <div class="content-text">
+                <p data-swiper-parallax-y="100%" data-swiper-parallax-duration="2000">ENJOY A</p>
+                <p data-swiper-parallax-y="-100%" data-swiper-parallax-duration="2300">WONDERFUL <i class="fa-solid fa-burger"></i> DAY</p>
+              </div>
+              <!-- 下方指示標 -->
+              <div class="container-radius">
+                <div class="content-bottom">
+                  <svg x="0px" y="0px" width="110px" height="40px">
+                    <path fill="#FFFFFF" d="M110,40H0V0h110V40z M12.875,11C21.435,22.816,31.842,40,55,40c23.211,0,33.331-17.178,41.875-29C101.537,4.55,110,0,110,0H0C0,0,8.174,4.51,12.875,11z"/>
+                  </svg>
+                  <a href="#about"><i class="fa-solid fa-angle-down"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="content">
+              <img src="https://cdn.pixabay.com/photo/2021/11/10/18/10/drink-6784535_960_720.jpg">
+              <div class="content-text">
+                <p data-swiper-parallax-y="100%" data-swiper-parallax-duration="2000">ENJOY A</p>
+                <p data-swiper-parallax-y="-100%" data-swiper-parallax-duration="2300">WONDERFUL <i class="fa-solid fa-burger"></i> DAY</p>
+              </div>
+              <!-- 下方指示標 -->
+              <div class="container-radius">
+                <div class="content-bottom">
+                  <svg x="0px" y="0px" width="110px" height="40px">
+                    <path fill="#FFFFFF" d="M110,40H0V0h110V40z M12.875,11C21.435,22.816,31.842,40,55,40c23.211,0,33.331-17.178,41.875-29C101.537,4.55,110,0,110,0H0C0,0,8.174,4.51,12.875,11z"/>
+                  </svg>
+                  <a href="#about"><i class="fa-solid fa-angle-down"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 上一張/下一張 -->
+        <div class="swiper-next_prev">
+          <div class="swiper-button-next swiper-button-next1"></div>
+          <div class="swiper-button-prev swiper-button-prev1"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 關於 -->
+  <div id="about">
+    <div class="container">
+      <div class="row">
+        <div class="col" data-aos="fade-down" data-aos-duration="1500" data-aos-once="false" data-aos-offset="0">
+          <img src="https://www.qburger.com.tw/uploads/images/qb_5ffbaaffd3745_Group%20871.png">
+        </div>
+        <div class="col">
+          <i class="fa-solid fa-burger animate__animated animate__swing animate__infinite" data-aos="fade-down" data-aos-duration="1500" data-aos-once="false" data-aos-offset="0"></i>
+          <h1 data-aos="fade-down" data-aos-duration="1500" data-aos-once="false" data-aos-offset="0">早午餐品牌&nbsp;最佳首選</h1>
+          <p data-aos="fade-down" data-aos-duration="1500" data-aos-once="false" data-aos-offset="0">
+            「 萊初早餐 」 嚴選好食材，專業研發創新餐點。<br>
+            豐富餐點組合餐，讓您天天都有新選擇！
+          </p>
+          <div class="button" data-aos="fade-down" data-aos-duration="1500" data-aos-once="false" data-aos-offset="0">
+            <span class="animate__animated animate__slideOutLeft"></span>
+            <button id="btn-about"><a href="./美味餐點/combination.html">美味餐點</a></button>
+            <span class="animate__animated animate__slideOutRight"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 最新消息: 輪播圖2 -->
+  <div id="swiper2">
+    <div class="container">
+      <div class="title">
+        <h1 data-aos="fade-right" data-aos-duration="1500" data-aos-once="false" data-aos-offset="0">最新消息</h1>
+      </div>
+      <!-- (設定 swiper 結構) -->
+      <div id="two" class="swiper" data-aos="fade-right" data-aos-duration="1500" data-aos-once="false" data-aos-offset="0">
+        <!-- 輪播圖片的主體 -->
+        <div class="swiper-wrapper">
+          <!-- Slides items -->
+          <div class="swiper-slide">
+            <div class="content">
+              <img src="https://cdn.pixabay.com/photo/2020/05/22/07/09/trophy-5204092_1280.jpg">
+              <div class="content-text">
+                <p>狂賀！！！ 萊初早餐榮獲 第 30 屆磐石獎</p>
+              </div>
+            </div>
+            <button>2022/07/01</button>
+          </div>
+          <div class="swiper-slide">
+            <div class="content">
+              <img src="https://cdn.pixabay.com/photo/2017/08/12/18/59/snack-2635035_640.jpg">
+              <div class="content-text">
+                <p>世界風味賞 6/29 登場</p>
+              </div>
+            </div>
+            <button>2022/06/28</button>
+          </div>
+          <div class="swiper-slide">
+            <div class="content">
+              <img src="https://www.qburger.com.tw/uploads/images/qb_61d4248585d2d_%E9%98%B2%E8%A9%90%E9%A8%99444_APP%E9%A6%96%E9%A0%81-w750%20h1334%20px_%E5%8F%AF%E5%8F%AF%20%E8%A4%87%E6%9C%AC.jpg">
+              <div class="content-text">
+                <p>防詐騙小叮嚀</p>
+              </div>
+            </div>
+            <button>2022/04/30</button>
+          </div>
+          <div class="swiper-slide">
+            <div class="content">
+              <img src="https://www.qburger.com.tw/uploads/images/qb_61b32aa0f0f10_QBTW20211210-%E6%93%B4%E5%A4%A7%E5%BE%B5%E6%89%8D-%E5%AE%98%E7%B6%B2.jpg">
+              <div class="content-text">
+                <p>百萬店長等您加入！！！</p>
+              </div>
+            </div>
+            <button>2022/03/06</button>
+          </div>
+          <div class="swiper-slide">
+            <div class="content">
+              <img src="https://cdn.pixabay.com/photo/2021/04/09/19/40/burger-6165330_960_720.jpg">
+              <div class="content-text">
+                <p>春季新品 「 元氣朝時 」</p>
+              </div>
+            </div>
+            <button>2022/03/02</button>
+          </div>
+          <div class="swiper-slide">
+            <div class="content">
+              <img src="https://www.qburger.com.tw/uploads/images/qb_609d23375fd23_20210513-app9%E6%8A%98%E5%84%AA%E6%83%A0_%E5%B7%A5%E4%BD%9C%E5%8D%80%E5%9F%9F%201.jpg">
+              <div class="content-text">
+                <p>APP 安心點餐 減少接觸最放心</p>
+              </div>
+            </div>
+            <button>2022/01/10</button>
+          </div>
+        </div>
+        <!-- 指示器 -->
+        <div class="swiper-pagination swiper-pagination2"></div>
+      </div>
+      <div class="button">
+        <span class="animate__animated animate__slideOutLeft"></span>
+        <button id="btn-swiper2"><a href="./最新消息/news_both.html">了解更多</a></button>
+        <span class="animate__animated animate__slideOutRight"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 介紹: 使用 background-attachment: fixed; -->
+  <div id="main">
+    <div class="container">
+      <div class="content-text">
+        <div class="icon">
+          <span>- - - - - -</span>
+          <i class="fa-solid fa-burger animate__animated animate__swing animate__infinite"></i>
+          <span>- - - - - -</span>
+        </div>
+        <h1>品牌故事</h1>
+        <p>因應現代生活型態的改變，外食族大增，早午餐儼然成為趨勢，打造「新穎」、「舒適」、「明亮」的用餐環境，提供「優質」、「精緻」、「平價」早午餐，讓顧客享用最有溫度的餐點。</p>
+        <div class="button">
+          <span class="animate__animated animate__slideOutLeft"></span>
+          <button id="btn-main"><a href="./關於我們/story.html">了解更多</a></button>
+          <span class="animate__animated animate__slideOutRight"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h3>關於我們</h3>
+          <p>萊初早餐店</p>
+        </div>
+        <div class="col">
+          <h3>聯絡資訊</h3>
+          <div class="row">
+            <div class="col">
+              <i class="fa-solid fa-location-dot"></i>
+              <p>新北市新莊區</p>
+            </div>
+            <div class="col">
+              <i class="fa-solid fa-phone"></i>
+              <p>123456789</p>
+            </div>
+            <div class="col">
+              <i class="fa-solid fa-envelope"></i>
+              <p>abc@defg.com</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#"><i class="fa-brands fa-google-plus-g"></i></a>
+          <a href="#"><i class="fa-solid fa-info"></i></a>
+          <a href="#"><i class="fa-solid fa-dove"></i></a>
+        </div>
+        <div class="col">
+          <p>
+            謝宜君 &copy; 2022 切版練習<br>
+            此網站為切版練習，所有圖片的著作權為原網站所有
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- js 指令 -->
+  <script src="./js/commond.js"></script>
+  <!-- 2.設定 swiper js -->
+  <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+  <!-- 2. AOS 的主程式 js -->
+  <script src="./js/aos.js"></script>
+
+  <script>
+    // 4.啟用 Swiper
+    const one = new Swiper('#one', {
+      loop: true, // 無限循環
+      parallax: true,
+      autoplay: {
+        delay: 4000 // 自動播放，設定幾毫秒播放下一張
+      },
+
+      simulateTouch: false, // 是否可以拖曳
+
+      // 啟用上一張、下一張功能
+      navigation: {
+        nextEl: ".swiper-button-next1",
+        prevEl: ".swiper-button-prev1",
+      },
+    });
+    const two = new Swiper('#two', {
+      loop: true, // 無限循環
+      autoplay: {
+        delay: 4000 // 自動播放，設定幾毫秒播放下一張
+      },
+      effect: "coverflow",
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: "auto",
+      coverflowEffect: {
+        rotate: 50,
+        stretch: 0,
+        depth: 100,
+        modifier: 1,
+        slideShadows: true,
+      },
+      spaceBetween: 10, // 圖片與圖片之間的距離
+      breakpoints: {
+        768: {
+          spaceBetween: 40,
+        },
+        1200: {
+          spaceBetween: 60,
+        },
+      },
+      pagination: {
+        el: ".swiper-pagination2",
+        type: "fraction",
+      },
+    });
+    // 3. 啟動 AOS
+    AOS.init()
+  </script>
+</body>
+</html>
