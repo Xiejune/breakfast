@@ -1,0 +1,1774 @@
+/* 清除預設樣式 */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* 清除清單預設樣式 */
+ul,
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* 主要字體 */
+body {
+  font-family: '微軟正黑體';
+}
+
+/* 主題顏色 */
+:root {
+  --bs-green1: #3ADE5B;
+  --bs-green2: #5EF54C;
+  --bs-green3:#83DE3A;
+  --bs-green4: #2C7524;
+  --bs-green5: #4C7548;
+  --bs-people: #E858F5;
+  --bs-red1: #F54C65;
+  --bs-red2: #A81328;
+  --bs-white_new: #ffffff;
+  --bs-black_new: #000000;
+  --bs-gray: #6c757d;
+  --bs-gray_l: #cccccc;
+  --bs-gray_d: #555555;
+}
+
+/* 導覽列 - - - - - - - - - - - - - */
+#navbar {
+  /* 螢幕寬度 */
+  width: 100vw;
+  /* 固定在螢幕上方 */
+  position: fixed;
+  top: 0;
+  /* 全部最上層 */
+  z-index: 1000;
+  padding: 0.5rem;
+  /* 背景色 */
+  background: var(--bs-green4);
+}
+
+#navbar .container {
+  /* 和父容器寬度一致 */
+  width: 100%;
+  padding: 0 0.5rem;
+  display: flex;
+  /* 垂直置中 */
+  align-items: center;
+}
+
+/* 按鈕樣式 */
+.btn {
+  padding: 0.75rem 1.25rem;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  /* 滑鼠游標 */
+  cursor: pointer;
+}
+
+/* 清單和搜尋 icon */
+#btn-hamburger i {
+  color: var(--bs-white_new);
+  font-size: 1.7rem;
+}
+
+/* 清單靠右側 */
+#btn-hamburger {
+  margin-left: auto;
+}
+
+/* logo 的圖片 */
+#logo img {
+  width: auto;
+  height: 60px;
+  display: block;
+}
+
+/* 清單 */
+#menu {
+  /* 側邊攔 */
+  width: 300px;
+  height: calc(100vh - 99px);
+  overflow: auto;
+  position: absolute;
+  right: -100%;
+  top: 100%;
+  background: var(--bs-white_new);
+  display: flex;
+  flex-direction: column;
+  padding-top: 0.8rem;
+  color: var(--bs-white_new);
+  font-weight: bolder;
+  /* 陰影 */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+#navbar .expand {
+  right: 0;
+}
+
+/* 卷軸樣式設定 */
+/* 寬度 */
+#menu::-webkit-scrollbar {
+  width: 4px;
+}
+
+/* 卷軸主軌 */
+#menu::-webkit-scrollbar-thumb {
+  background: var(--bs-green4);
+  border: none;
+  border-radius: 0;
+  opacity: 0.2;
+}
+
+/* 卷軸移動的 */
+#menu::-webkit-scrollbar-track {
+  background: var(--bs-green2);
+  border: none;
+  border-radius: 0;
+}
+
+#menu li a {
+  display: block;
+  text-decoration: none;
+  padding: 1rem;
+  font-size: 1.2rem;
+  color: var(--bs-green4);
+  font-weight: bolder;
+}
+
+#menu li i {
+  padding-right: 1rem;
+}
+
+#menu li a:hover {
+  background: var(--bs-green3);
+  color: var(--bs-red2);
+}
+
+/* 主題: 輪播圖1 - - - - - - - - - - */
+/* 要下移, 因為導覽列 */
+#swiper1 {
+  margin-top: 76px;
+}
+
+/* 要符合螢幕寬度 */
+#swiper1,
+#swiper1 .container,
+#swiper1 .swiper,
+#swiper1 .swiper-wrapper,
+#swiper1 .swiper-slide,
+#swiper1 .content {
+  width: 100%;
+}
+
+/* 遮罩 */
+#swiper1 .swiper-slide {
+  position: relative;
+}
+#swiper1 .swiper-slide::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+/* 為輪播圖裡面內容定位使用 */
+#swiper1 .content {
+  position: relative;
+}
+
+/* 1. 輪播圖的圖片 */
+#swiper1 .content img {
+  display: block;
+  width: 100%;
+  height: auto;
+  height: 470px;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* 2. 輪播圖的文字 */
+#swiper1 .content .content-text {
+  width: 80%;
+  height: 80%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 2;
+}
+
+#swiper1 .content .content-text p:nth-of-type(1) {
+  font-size: 4rem;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  /* 置中 */
+  text-align: center;
+  color: var(--bs-white_new);
+}
+
+#swiper1 .content .content-text p:nth-of-type(2) {
+  font-size: 3.5rem;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  /* 置中 */
+  text-align: center;
+  margin-top: 1rem;
+  color: var(--bs-white_new);
+}
+
+#swiper1 .content .content-text p:nth-of-type(2) i {
+  font-size: 4rem;
+  transform: rotate(30deg);
+  padding: 0 0.5rem;
+}
+
+/* 3. 輪播圖下方指示 icon */
+#swiper1 .container-radius {
+  width: 100%;
+  height: 40px;
+  background-color: transparent;
+  position: absolute;
+  bottom: 0;
+  /* 比導覽列低, 比輪播圖高 */
+  z-index: 980;
+}
+
+#swiper1 .container-radius::before {
+  content: '';
+  position: absolute;
+  background: #fff;
+  left: 0;
+  top: 0;
+  width: calc(100% / 2 - 55px);
+  height: 100%;
+}
+
+#swiper1 .container-radius::after {
+  content: '';
+  position: absolute;
+  background: #fff;
+  right: 0;
+  top: 0;
+  width: calc(100% / 2 - 55px);
+  height: 100%;
+}
+
+#swiper1 .container-radius .content-bottom {
+  width: 110px;
+  height: 100%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#swiper1 .container-radius .content-bottom a {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -75%);
+  font-size: 2rem;
+  color: #fff;
+}
+
+/* 上一張 / 下一張 */
+#swiper1 .swiper-button-next1,
+#swiper1 .swiper-button-prev1 {
+  color: var(--bs-white_new);
+  font-weight: bolder;
+  width: 18.5px;
+  height: 30px;
+}
+#swiper1 .swiper-button-next1::after,
+#swiper1 .swiper-button-prev1::after {
+  background: rgba(0, 0, 0, 0.4);
+  padding: 1rem;
+  font-size: 30px;
+}
+
+/* 動畫特效 */
+@-webkit-keyframes rotateOut_new {
+  from {
+    -webkit-transform: rotate3d(0, 0, 1, -200deg);
+    transform: rotate3d(0, 0, 1, -200deg);
+    opacity: 0;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+@keyframes rotateOut_new {
+  from {
+    -webkit-transform: rotate3d(0, 0, 1, -200deg);
+    transform: rotate3d(0, 0, 1, -200deg);
+    opacity: 0;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+.animate__rotateOut_new {
+  -webkit-animation-name: rotateOut_new;
+  animation-name: rotateOut_new;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+}
+
+/* 關於 - - - - - - - - - - - */
+#about,
+#about .container {
+  width: 100%;
+}
+
+#about .row {
+  width: 100%;
+  padding: 3rem 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#about .col {
+  width: 100%;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#about .col img {
+  width: 100%;
+  height: auto;
+}
+
+#about .col i {
+  font-size: 4rem;
+  color: var(--bs-green4);
+}
+
+/* 特效 */
+.animate__animated.animate__swing {
+  --animate-duration: 4s;
+}
+
+/* 標題 */
+#about .col h1 {
+  font-weight: bolder;
+}
+
+/* 內容 */
+#about .col p {
+  font-weight: bolder;
+  color: var(--bs-gray);
+  letter-spacing: 1px;
+  line-height: 1.2;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+/* 按鈕 */
+#about .col .button {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+#about .col .button button {
+  appearance: none;
+  background: transparent;
+  border: none;
+  border-radius: 5rem;
+  margin: 0 2rem;
+}
+
+#about .col .button a {
+  display: block;
+  padding: 0.8rem;
+  width: 200px;
+  text-decoration: none;
+  font-size: 1.3rem;
+  font-weight: bolder;
+  color: var(--bs-white_new);
+  background: var(--bs-green4);
+  border-radius: 5rem;
+}
+
+#about .col .button a:hover {
+  color: var(--bs-white_new);
+  background: var(--bs-green5);
+}
+
+#about .col .button span {
+  width: 90%;
+  height: 2px;
+  background: var(--bs-red1);
+}
+
+/* 最新消息: 輪播圖2 - - - - - - - - - - - - */
+#swiper2,
+#swiper2 .container,
+#swiper2 .swiper {
+  width: 100%;
+}
+
+#swiper2 .container {
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(115, 181, 51, 0.5);
+}
+
+#swiper2 .container .title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#swiper2 .container .title h1 {
+  color: var(--bs-black_new);
+}
+
+#swiper2 .container .title i {
+  font-size: 2rem;
+  color: var(--bs-red1);
+  padding-right: 3rem;
+}
+
+#swiper2 .swiper {
+  padding: 50px 0;
+}
+
+#swiper2 .swiper-slide {
+  width: 70%;
+  max-width: 350px;
+  aspect-ratio: 1 / 1;
+  position: relative;
+}
+
+#swiper2 .content {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+#swiper2 .content img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+#swiper2 .content .content-text {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  top: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  transition: 0.5s;
+}
+
+#swiper2 .content:hover .content-text {
+  top: 0;
+  justify-content: center;
+}
+
+#swiper2 .content .content-text p {
+  padding: 2rem 1rem;
+  font-size: 1.5rem;
+  font-weight: bolder;
+  color: var(--bs-white_new);
+  text-align: center;
+}
+
+#swiper2 .swiper-slide button {
+  appearance: none;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 8px;
+  background: var(--bs-white_new);
+  color: var(--bs-black_new);
+  font-size: 1.2rem;
+  font-weight: bolder;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, -50%);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* 按鈕 */
+#swiper2 .button {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  margin-top: 2rem;
+}
+
+#swiper2 .button button {
+  appearance: none;
+  background: transparent;
+  border: none;
+  border-radius: 5rem;
+  margin: 0 2rem;
+}
+
+#swiper2 .button a {
+  display: block;
+  padding: 0.8rem;
+  width: 150px;
+  text-decoration: none;
+  font-size: 1.3rem;
+  font-weight: bolder;
+  color: var(--bs-white_new);
+  background: var(--bs-green4);
+  border-radius: 5rem;
+}
+
+#swiper2 .button a:hover {
+  color: var(--bs-white_new);
+  background: var(--bs-green5);
+}
+
+#swiper2 .button span {
+  width: 90%;
+  height: 2px;
+  background: var(--bs-red1);
+}
+
+/* 介紹 */
+#main {
+  width: 100%;
+  min-height: 430px;
+  background-image: url('https://cdn.pixabay.com/photo/2017/06/14/14/59/bread-2402350_960_720.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* 遮罩 */
+#main::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+#main .container {
+  width: 90%;
+  height: 80%;
+  padding: 1rem 1.5rem;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+#main .content-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+/* 小尺寸: 不出現, 中/大尺寸: 出現 */
+#main .content-text .icon {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  color: var(--bs-white_new);
+}
+
+#main .content-text .icon i {
+  font-size: 3rem;
+  padding: 0 3rem;
+}
+
+#main .content-text h1 {
+  font-size: 3.2rem;
+  font-weight: bolder;
+  color: var(--bs-white_new);
+  line-height: 1.2;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+#main .content-text p {
+  font-size: 1.3rem;
+  letter-spacing: 0.36px;
+  line-height: 25px;
+  font-weight: bolder;
+  color: var(--bs-white_new);
+  text-align: center;
+  padding-bottom: 1rem;
+}
+
+/* 按鈕 */
+#main .button {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  margin-top: 2rem;
+}
+
+#main .button button {
+  appearance: none;
+  background: transparent;
+  border: none;
+  border-radius: 5rem;
+  margin: 0 2rem;
+}
+
+#main .button a {
+  display: block;
+  padding: 0.8rem;
+  width: 150px;
+  text-decoration: none;
+  font-size: 1.3rem;
+  font-weight: bolder;
+  color: var(--bs-white_new);
+  background: var(--bs-green4);
+  border-radius: 5rem;
+}
+
+#main .button a:hover {
+  color: var(--bs-white_new);
+  background: var(--bs-green5);
+}
+
+#main .button span {
+  width: 90%;
+  height: 2px;
+  background: var(--bs-red1);
+}
+
+/* footer ------------------------------------- */
+#footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background: #000;
+}
+
+#footer .container {
+  width: 80%;
+  color: var(--bs-white_new);
+  padding: 1rem 1rem;
+}
+
+#footer .row {
+  padding-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#footer .col {
+  width: 100%;
+  padding: 1rem;
+}
+
+#footer .col h3 {
+  font-size: 1.5rem;
+  font-weight: bolder;
+}
+
+#footer .col p {
+  margin-top: 15px;
+  letter-spacing: 0.42px;
+  line-height: 23.8px;
+  font-weight: bolder;
+}
+
+#footer .row .col .row {
+  padding-top: 0.8rem;
+}
+
+#footer .row .col .row .col {
+  display: flex;
+  align-items: center;
+  padding-bottom: 0.8rem;
+}
+
+#footer .row .col .row .col i {
+  font-size: 1.5rem;
+}
+
+#footer .row .col .row .col p {
+  margin-top: 0;
+  padding-left: 1rem;
+}
+
+#footer .container > .row > .col:nth-of-type(3) {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#footer .container > .row > .col:nth-of-type(3) i {
+  font-size: 2rem;
+}
+
+#footer .container > .row > .col:nth-of-type(3) a {
+  color: var(--bs-green4);
+}
+
+#footer .container > .row > .col:nth-of-type(3) a:hover {
+  color: var(--bs-red1);
+}
+
+/* 視窗頁: 關於我們 / 最新消息 / 美味餐點 / 聯絡我們 (主題背景) - - - - - - - - - - - - - */
+.background {
+  margin-top: 76px;
+  width: 100%;
+  min-height: 430px;
+  background-image: url('https://cdn.pixabay.com/photo/2017/06/14/14/59/bread-2402350_960_720.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* 遮罩 */
+.background::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.background .container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.background .content-text {
+  width: 90%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  color: var(--bs-white_new);
+  font-weight: bolder;
+}
+
+.background .content-text i {
+  font-size: 3rem;
+  color: var(--bs-white_new);
+}
+
+.background .content-text p,
+.background .content-text a {
+  color: var(--bs-white_new);
+  font-weight: bolder;
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+
+/* 視窗頁: 關於我們 - - - - - - - - - - */
+.introduce,
+.introduce .container {
+  width: 100%;
+}
+
+.introduce .row {
+  width: 100%;
+  padding: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.introduce .col {
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.introduce .col p {
+  padding: 0.5rem 1rem;
+  text-align: center;
+  font-weight: bolder;
+  color: var(--bs-gray);
+  letter-spacing: 0.36px;
+  line-height: 24px;
+  font-size: 1.2rem;
+}
+
+.introduce .col img {
+  display: block;
+  border-radius: 8px;
+  width: 100%;
+  height: 100%;
+  max-width: 430px;
+  max-height: 300px;
+  object-fit: cover;
+  object-position: center;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+#Us_introduce2 {
+  background: rgba(115, 181, 51, 0.5);
+}
+
+#Us_introduce2 .row {
+  flex-direction: row-reverse;
+}
+
+#Us_introduce2 .col h1 {
+  color: var(--bs-black_new);
+}
+
+#Us_introduce2 .col p {
+  color: var(--bs-white_new);
+  font-size: 1.3rem;
+}
+
+/* 主要內容: 5個介紹 ------------------------------------------- */
+#style,
+#style .container,
+#style .row {
+  width: 100%;
+}
+
+#style .container {
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 主要內容, 主要內容 */
+#style .container .row {
+  padding: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* 小/中尺寸: 1欄, 中尺寸: 3欄, 大尺寸: 5欄 */
+#style .container .col {
+  width: 100%;
+  padding: 2rem 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+#style .container .col div {
+  width: 100%;
+  height: 100%;
+  max-width: 415px;
+  max-height: 260px;
+  /* 漸層 - 小/中尺寸: 直接出現, 大尺寸: 滑鼠移過才出現 */
+  background: var(--bs-green4);
+  /* 圓角 */
+  border-radius: 30px;
+  padding: 2rem 1.5rem;
+  color: var(--bs-white_new);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+#style .container .col div:hover {
+  transform: translateY(-8%);
+  transition: 0.5s;
+}
+
+/* 第一個 icon */
+#style .container .col div i {
+  font-size: 5rem;
+  padding-bottom: 1rem;
+}
+/* 第二個標題 */
+#style .container .col div h2 {
+  font-size: 1.5rem;
+  padding-bottom: 0.5rem;
+}
+/* 第三個內容 */
+#style .container .col div p {
+  font-size: 1.3rem;
+  letter-spacing: 0.36px;
+  line-height: 20px;
+  text-align: center;
+  font-weight: bolder;
+  padding-bottom: 0.5rem;
+}
+/* 第四個 ...- 小/中尺寸: 沒有 ..., 大尺寸: 滑鼠移過會出現 */
+#style .container .col div span {
+  font-size: 2rem;
+}
+
+/* 視窗頁: 最新消息/美味餐店 (list) - - - - - - - - - - */
+.background .list {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+}
+
+.background .list ul {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.background .list a {
+  padding: 0.5rem 1rem;
+  background: #76aa62;
+  color: var(--bs-black_new);
+  border-radius: 5rem;
+  font-weight: bolder;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.background .list a:hover {
+  background: var(--bs-green5);
+  color: var(--bs-white_new);
+}
+
+.background .list li:nth-of-type(1) ~ li {
+  margin-left: 1rem;
+}
+
+/* 視窗頁: 最新消息 - - - - - - - - - - */
+#news {
+  background-image: url('https://cdn.pixabay.com/photo/2021/02/13/11/05/toast-6011147_640.jpg');
+}
+
+#meals {
+  background-image: url('https://cdn.pixabay.com/photo/2020/04/18/08/42/bread-5058279_960_720.jpg');
+}
+
+#conect1 {
+  background-image: url('https://cdn.pixabay.com/photo/2021/03/01/15/05/beefburger-6059935_960_720.jpg');
+}
+
+
+/* 視窗頁: 最新消息 (輪播圖) */
+.swiper-list,
+.swiper-list .container,
+.swiper-list .swiper-slide,
+.swiper-list .row {
+  width: 100%;
+}
+
+.swiper-list .container {
+  padding: 3rem 0;
+  position: relative;
+}
+
+.swiper-list .swiper-slide {
+  display: none;
+}
+
+.swiper-list .container .show {
+  display: block;
+}
+
+.swiper-list .row {
+  padding: 0 1rem 5rem 1rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.swiper-list .col {
+  width: 100%;
+  padding: 1rem;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.swiper-list .col {
+  margin-top: 4rem;
+}
+
+.swiper-list .content {
+  position: relative;
+  width: 90%;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+}
+
+.swiper-list .hover .content {
+  transform: translateY(-5%) scale(1.05);
+}
+
+.swiper-list .content img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.swiper-list .content .content-text {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.1);
+  visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: 1s;
+}
+
+.swiper-list .col:hover .content .content-text {
+  visibility: visible;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.swiper-list .content .content-text i {
+  display: none;
+  font-size: 3rem;
+  color: var(--bs-white_new);
+  padding: 1rem 0;
+  transform: rotate(30deg);
+}
+
+.swiper-list .content .content-text p {
+  padding: 0 1.5rem;
+  text-align: center;
+  font-size: 2rem;
+  color: var(--bs-white_new);
+  font-weight: bolder;
+}
+
+.swiper-list .col button {
+  appearance: none;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 8px;
+  background: var(--bs-white_new);
+  color: var(--bs-black_new);
+  font-size: 1.2rem;
+  font-weight: bolder;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, -50%);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+  transition: 0.5s;
+}
+
+.swiper-list .hover button {
+  transform: translate(-50%, -80%);
+}
+
+.swiper-list .button-next,
+.swiper-list .button-prev {
+  appearance: none;
+  border: none;
+  background: transparent;
+  border-radius: 3rem;
+  position: absolute;
+}
+
+.swiper-list .button-next i,
+.swiper-list .button-prev i {
+  font-size: 2.5rem;
+}
+
+.swiper-list .button-next {
+  right: 3rem;
+  bottom: 30px;
+}
+
+.swiper-list .button-prev {
+  left: 3rem;
+  bottom: 30px;
+}
+
+.swiper-list .button-next a,
+.swiper-list .button-prev a {
+  display: block;
+  text-decoration: none;
+  border-radius: 3rem;
+  color: var(--bs-green4);
+  font-size: 1.2rem;
+  padding: 0.5rem 1rem;
+  font-weight: bolder;
+}
+
+.swiper-list .button-next a:hover,
+.swiper-list .button-prev a:hover {
+  color: var(--bs-red1);
+}
+
+.swiper-list .opacity {
+  opacity: 0.5;
+}
+
+.swiper-list .pagination {
+  font-size: 1.5rem;
+  font-weight: bolder;
+  position: absolute;
+  top: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(115, 181, 51, 0.3);
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+}
+
+
+/* 視窗頁: 美味餐點 (輪播圖) */
+.swiper-list_meals,
+.swiper-list_meals .container,
+.swiper-list_meals .swiper-slide,
+.swiper-list_meals .row {
+  width: 100%;
+}
+
+.swiper-list_meals .container {
+  padding: 3rem 0;
+  position: relative;
+}
+
+.swiper-list_meals .swiper-slide {
+  display: none;
+}
+
+.swiper-list_meals .container .show {
+  display: block;
+}
+
+.swiper-list_meals .row {
+  padding: 0 1rem 5rem 1rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.swiper-list_meals .col {
+  width: 100%;
+  padding: 1rem;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.swiper-list_meals .col {
+  margin-top: 4rem;
+}
+
+.swiper-list_meals .content {
+  position: relative;
+  width: 90%;
+  max-width: 400px;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+}
+
+.swiper-list_meals .hover .content {
+  transform: translateY(-5%) scale(1.05);
+}
+
+.swiper-list_meals .content img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+}
+
+.swiper-list_meals .content .content-text {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.1);
+  visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+}
+
+.swiper-list_meals .hover .content .content-text {
+  visibility: visible;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.swiper-list_meals .content .content-text i {
+  display: none;
+  font-size: 3rem;
+  color: var(--bs-white_new);
+  padding: 1rem 0;
+  transform: rotate(30deg);
+}
+
+.swiper-list_meals .content .content-text p {
+  padding: 0 1.5rem;
+  text-align: center;
+  font-size: 2rem;
+  color: var(--bs-white_new);
+  font-weight: bolder;
+}
+
+.swiper-list_meals .content .content-text p:nth-of-type(2) {
+  font-size: 1.3rem;
+  color: var(--bs-white_new);
+  font-weight: bolder;
+  padding-top: 1rem;
+}
+
+.swiper-list_meals .col button {
+  appearance: none;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 8px;
+  background: var(--bs-white_new);
+  color: var(--bs-black_new);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+  font-size: 1.2rem;
+  font-weight: bolder;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, -50%);
+  transition: 0.5s;
+}
+
+.swiper-list_meals .hover button {
+  transform: translate(-50%, -80%);
+}
+
+.swiper-list_meals .button-next,
+.swiper-list_meals .button-prev {
+  appearance: none;
+  border: none;
+  background: transparent;
+  border-radius: 3rem;
+  position: absolute;
+}
+
+.swiper-list_meals .button-next i,
+.swiper-list_meals .button-prev i {
+  font-size: 2.5rem;
+}
+
+.swiper-list_meals .button-next {
+  right: 3rem;
+  bottom: 30px;
+}
+
+.swiper-list_meals .button-prev {
+  left: 3rem;
+  bottom: 30px;
+}
+
+.swiper-list_meals .button-next a,
+.swiper-list_meals .button-prev a {
+  display: block;
+  text-decoration: none;
+  border-radius: 3rem;
+  color: var(--bs-green4);
+  font-size: 1.2rem;
+  padding: 0.5rem 1rem;
+  font-weight: bolder;
+}
+
+.swiper-list_meals .button-next a:hover,
+.swiper-list_meals .button-prev a:hover {
+  color: var(--bs-red1);
+}
+
+.swiper-list_meals .opacity {
+  opacity: 0.5;
+}
+
+.swiper-list_meals .pagination {
+  font-size: 1.5rem;
+  font-weight: bolder;
+  position: absolute;
+  top: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(115, 181, 51, 0.3);
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+}
+
+/* 聯絡我們 - - - - - - - - - - */
+#conect_main,
+#conect_main .container,
+#conect_main .row {
+  width: 100%;
+}
+
+#conect_main .container {
+  padding: 3rem 1rem;
+}
+
+#conect_main .container > p {
+  padding: 1rem;
+  text-align: center;
+  color: var(--bs-gray_d);
+  font-size: 1.1rem;
+  font-weight: bolder;
+}
+
+#conect_main .row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1rem;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+
+#conect_main .row .col {
+  width: 90%;
+  overflow: hidden;
+  position: relative;
+  border: 2px solid transparent;
+  background: transparent;
+  border-radius: 8px;
+  padding-top: 1rem;
+  margin: 1rem 0;
+}
+
+#conect_main .row #special {
+  width: 90%;
+}
+
+#conect_main .row .show {
+  border: 2px solid #000;
+}
+
+#conect_main .row .showp {
+  border: 2px solid #000 !important;
+}
+
+#conect_main .row .col p {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  font-size: 1.2rem;
+  pointer-events: none;
+  font-weight: bolder;
+  z-index: -1;
+}
+
+#conect_main .row .show p {
+  top: 0;
+  transform: translate(15%, 50%);
+  font-size: 0.9rem;
+  transition: 0.5s;
+  z-index: none;
+  color: var(--bs-green4);
+}
+
+#conect_main .row .showp p {
+  top: 0 !important;
+  transform: translate(15%, 50%) !important;
+  font-size: 0.9rem !important;
+  z-index: none !important;
+  color: var(--bs-green4) !important;
+}
+
+#conect_main .row .col input,
+#conect_main .row .col textarea {
+  display: block;
+  width: 100%;
+  appearance: none;
+  background: var(--bs-white_new);
+  border: 2px solid #000;
+  padding: 0.8rem 0 0.8rem 0.5rem;
+  font-size: 1.2rem;
+  border-radius: 8px;
+}
+
+#conect_main .row .show input,
+#conect_main .row .show textarea {
+  background: transparent;
+  border: 2px solid transparent;
+}
+
+#conect_main .row .showp input,
+#conect_main .row .showp textarea {
+  background: transparent !important;
+  border: 2px solid transparent !important;
+}
+
+#conect_main .row .col input:focus-visible,
+#conect_main .row .col textarea:focus-visible {
+  outline: none;
+}
+
+/* 按鈕 */
+#conect_main .button {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  margin-top: 2rem;
+}
+
+#conect_main #special_button .button input {
+  display: block;
+  appearance: none;
+  font-size: 1.3rem;
+  font-weight: bolder;
+  color: var(--bs-white_new);
+  background: var(--bs-green4);
+  border-radius: 5rem;
+  margin: 0 2rem;
+  padding: 0.8rem 2rem;
+  width: 200px;
+  border: none;
+}
+
+#conect_main #special_button {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#conect_main #special_button .button input:hover {
+  color: var(--bs-white_new);
+  background: var(--bs-green5);
+}
+
+#conect_main .button span {
+  width: 90%;
+  height: 2px;
+  background: var(--bs-red1);
+}
+
+@media (min-width: 768px) {
+  /* 主題: 輪播圖1 - - - - - - - - - - */
+  /* 輪播圖的圖片 */
+  #swiper1 .content img {
+    height: 540px;
+  }
+
+  /* 關於 - - - - - - - - - - - */
+  #about .row {
+    padding: 3rem 3rem;
+  }
+
+  #about .col {
+    padding: 2rem 3rem;
+  }
+
+  #about .col img {
+    width: 75%;
+  }
+
+  /* 介紹 - - - - - - - - - - */
+  #main {
+    min-height: 470px;
+  }
+
+  #main .container {
+    width: 75%;
+  }
+
+  /* 小尺寸: 不出現, 中/大尺寸: 出現 */
+  #main .content-text .icon {
+    display: flex;
+  }
+
+  /* footer ------------------------------------- */
+  #footer .container > .row > .col:nth-of-type(1),
+  #footer .container > .row > .col:nth-of-type(4) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #footer .container > .row > .col:nth-of-type(2),
+  #footer .container > .row > .col:nth-of-type(3) {
+    width: 50%;
+  }
+
+  #footer .container > .row > .col:nth-of-type(3) {
+    display: flex;
+    align-items: center;
+  }
+
+  /* 視窗頁: 關於我們 / 最新消息 / 美味餐點 / 聯絡我們 (主題背景) - - - - - - - - - - - - - */
+  .background {
+    min-height: 470px;
+  }
+
+  .background .content-text {
+    width: 75%;
+  }
+
+  /* 視窗頁: 關於我們 - - - - - - - - - - */
+  .introduce .row {
+    padding: 4.5rem 2.5rem;
+  }
+  
+  .introduce .col {
+    width: 50%;
+  }
+
+  /* 主要內容: 5個介紹 ------------------------------------------- */
+  /* 小/中尺寸: 1欄, 中尺寸: 3欄, 大尺寸: 5欄 */
+  #style .container .col {
+    width: 33.333333%;
+  }
+
+  /* 視窗頁: 最新消息 - - - - - - - - - - */
+  .swiper-list .col {
+    width: 50%;
+  }
+
+  .swiper-list .content .content-text i {
+    display: block;
+  }
+
+  /* 聯絡我們 - - - - - - - - - - */
+  #conect_main .row .col {
+    width: 40%;
+  }
+
+  #conect_main .row #special {
+    width: 87%;
+  }
+
+}
+
+@media (min-width: 1200px) {
+  .change-bg {
+    background: var(--bs-black_new) !important;
+  }
+
+  .change-bg #logo img {
+    height: 60px !important;
+  }
+
+  #menu li a {
+    color: var(--bs-white_new) !important;
+  }
+
+  #menu li a:hover {
+    background: transparent !important;
+    color: var(--bs-red1) !important;
+  }
+
+  #navbar {
+    background: transparent;
+  }
+
+  /* 漢堡按鈕消失 */
+  #btn-hamburger {
+    display: none;
+  }
+
+  #navbar .container {
+    justify-content: space-evenly;
+  }
+
+  /* logo 的圖片 */
+  #logo img {
+    height: 100px;
+    padding: 0.5rem 0;
+  }
+
+  /* 清單回來 */
+  #menu {
+    /* 解除定位 */
+    position: static;
+    left: auto;
+    right: auto;
+    top: auto;
+    bottom: auto;
+    /* 修改排版 */
+    flex-direction: row;
+    justify-content: space-evenly;
+    /* 寬度/高度 */
+    width: 60%;
+    height: auto;
+    /* 解除上邊距 */
+    padding-top: 0;
+    /* 清除陰影 */
+    box-shadow: none;
+    background: transparent;
+  }
+
+  #menu li a {
+    color: var(--bs-white_new);
+  }
+
+  #menu li a:hover {
+    background: transparent;
+    color: var(--bs-green4);
+  }
+
+  /* 主題: 輪播圖1 - - - - - - - - - - */
+  #swiper1 {
+    margin-top: 0;
+  }
+  /* 輪播圖的圖片 */
+  #swiper1 .content img {
+    height: 640px;
+  }
+
+  /* 關於 - - - - - - - - - - - */
+  #about .row {
+    padding: 3rem 1.5rem;
+  }
+
+  #about .col {
+    width: 50%;
+    padding: 2rem 1rem;
+  }
+
+  #about .col img {
+    width: 90%;
+  }
+
+  /* 介紹 - - - - - - - - - - - */
+  #main {
+    min-height: 540px;
+  }
+
+  #main .container {
+    width: 65%;
+  }
+
+  /* footer ------------------------------------- */
+  #footer .col {
+    width: 33.333333%;
+    padding: 1rem;
+  }
+
+  #footer .container > .row > .col:nth-of-type(2),
+  #footer .container > .row > .col:nth-of-type(3) {
+    width: 33.333333%;
+  }
+
+  #footer .col:nth-of-type(2) .col {
+    width: 100%;
+  }
+
+  #footer .col:nth-of-type(4) {
+    width: 100%;
+    padding-top: 2rem;
+  }
+
+  /* 視窗頁: 關於我們 / 最新消息 / 美味餐點 / 聯絡我們 (主題背景) - - - - - - - - - - - - - */
+  .background {
+    margin-top: 0;
+    min-height: 540px;
+  }
+
+  .background .content-text {
+    width: 65%;
+  }
+
+  /* 主要內容-2 --------------------------------------------------------- */
+  /* 主要內容: 5個介紹 ------------------------------------------- */
+  /* 小/中尺寸: 1欄, 中尺寸: 3欄, 大尺寸: 5欄 */
+  #style .container .col {
+    width: 20%;
+  }
+
+  #style .container .col div {
+    background: var(--bs-white_new);
+    color: var(--bs-green4);
+  }
+
+  /* 第四個 ...- 小/中尺寸: 沒有 ..., 大尺寸: 滑鼠移過會出現 */
+  #style .container .col div span {
+    visibility: hidden;
+  }
+
+  #style .container .col:hover div {
+    /* 漸層 - 小/中尺寸: 直接出現, 大尺寸: 滑鼠移過才出現 */
+    background: var(--bs-green4);
+    /* 圓角 */
+    border-radius: 30px;
+    color: var(--bs-white_new);
+  }
+
+  /* 第四個 ...- 小/中尺寸: 沒有 ..., 大尺寸: 滑鼠移過會出現 */
+  #style .container .col:hover div span {
+    visibility: visible;
+  }
+
+  /* 視窗頁: 最新消息 - - - - - - - - - - */
+  .swiper-list .col {
+    width: 33.333333%;
+  }
+
+  /* 視窗頁: 美味餐點 - - - - - - - - - - */
+
+  .swiper-list_meals .col {
+    width: 33.333333%;
+  }
+}
